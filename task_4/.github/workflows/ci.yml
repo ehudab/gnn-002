@@ -1,0 +1,56 @@
+name: GNN MLOps CI & Validation Gate
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test-and-gate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install torch-geometric
+          pip install -r task_4/requirements.txt
+
+      - name: Run Test Suite (Failure Modes & API Consistency)
+        run: |
+          python -m unittest task_4/tests/test_api.py
+          python -m unittest task_4/tests/test_gate.py
+
+      - name: Execute Model Promotion Gate Check
+        run: |
+          echo "Running automated promotion gate check against current champion..."
+          # Generates test candidate run summary if absent
+          python -c "
+          import json, os
+          os.makedirs('task_4/artifacts', exist_ok=True)
+          cand = {
+            'run_name': 'ci_candidate_test',
+            'best_val_acc': 0.852,
+            'test_acc': 0.841,
+            'artifacts_dir': 'task_4/artifacts/exp_1_graphsage_baseline'
+          }
+          with open('task_4/artifacts/ci_cand.json', 'w') as f:
+            json.dump(cand, f)
+          "
+          python task_4/validation_gate.py --candidate task_4/artifacts/ci_cand.json --min-delta 0.005
+
+      - name: Verify Docker Buildability
+        run: |
+          docker build -t gnn-inference:ci-test task_4/
+

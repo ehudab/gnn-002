@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  # Local MLflow Tracking Server with Web UI & SQLite Backend
+  mlflow-tracking-server:
+    image: ghcr.io/mlflow/mlflow:v2.10.0
+    container_name: gnn-mlflow-tracker
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./artifacts:/mlflow/artifacts
+      - ./mlruns:/mlflow/mlruns
+    command: >
+      mlflow server
+      --backend-store-uri sqlite:////mlflow/mlruns/mlflow.db
+      --default-artifact-root /mlflow/artifacts
+      --host 0.0.0.0
+      --port 5000
+    restart: unless-stopped
+
+  # GNN Inductive Inference API Service
+  gnn-inference-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gnn-fastapi-service
+    ports:
+      - "8000:8000"
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow-tracking-server:5000
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./artifacts:/app/task_4/artifacts
+    depends_on:
+      - mlflow-tracking-server
+    restart: unless-stopped
+

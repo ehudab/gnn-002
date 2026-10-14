@@ -1,0 +1,11 @@
+Synthetic fraud dataset summary
+================================
+Nodes: 250  (fraud=75, legit=175)
+Edges: 636
+Average degree: 5.09  (min=0, max=13)
+Isolated nodes (degree 0): 5
+Edge homophily (fraction of edges connecting same-class nodes): 0.887
+
+Feature means by class:
+  Fraud  -> amount=165.1, age=59.6, velocity=3.96
+  Legit  -> amount=94.1, age=400.2, velocity=1.04

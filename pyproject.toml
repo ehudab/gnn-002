@@ -1,0 +1,27 @@
+[project]
+name = "gnn"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Naod Abebe", email = "naodabeben@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.143.1",
+    "httpx>=0.28.1",
+    "matplotlib>=3.11.2",
+    "mlflow>=3.17.1",
+    "pydantic>=2.14.1",
+    "pytest>=9.1.1",
+    "scikit-learn>=1.9.1",
+    "torch-geometric>=2.8.1",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+gnn = "gnn:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
