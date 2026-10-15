@@ -1,0 +1,11 @@
+{
+  "in_dim": 1433,
+  "hidden_dim": 128,
+  "num_classes": 7,
+  "dropout": 0.4,
+  "aggr": "mean",
+  "lr": 0.005,
+  "weight_decay": 0.0001,
+  "seed": 101,
+  "epochs": 140
+}

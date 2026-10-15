@@ -1,0 +1,14 @@
+{
+  "run_name": "exp_3_graphsage_max_aggr",
+  "best_val_acc": 0.766,
+  "best_val_loss": 1.207336187362671,
+  "test_acc": 0.755,
+  "test_loss": 1.2080326080322266,
+  "seed": 2024,
+  "hidden_dim": 32,
+  "lr": 0.03,
+  "artifacts_dir": "/home/ehudab/Naod/iCog/Training/GNN/task_4/artifacts/exp_3_graphsage_max_aggr",
+  "weights_path": "/home/ehudab/Naod/iCog/Training/GNN/task_4/artifacts/exp_3_graphsage_max_aggr/weights.pt",
+  "config_path": "/home/ehudab/Naod/iCog/Training/GNN/task_4/artifacts/exp_3_graphsage_max_aggr/config.json",
+  "schema_path": "/home/ehudab/Naod/iCog/Training/GNN/task_4/artifacts/exp_3_graphsage_max_aggr/schema.json"
+}

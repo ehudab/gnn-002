@@ -1,0 +1,15 @@
+{
+  "feature_dim": 1433,
+  "num_classes": 7,
+  "label_mapping": {
+    "0": "Theory",
+    "1": "Reinforcement_Learning",
+    "2": "Genetic_Algorithms",
+    "3": "Neural_Networks",
+    "4": "Probabilistic_Methods",
+    "5": "Case_Based",
+    "6": "Rule_Learning"
+  },
+  "dataset_name": "Cora",
+  "dataset_hash": "9d47daae14d6"
+}

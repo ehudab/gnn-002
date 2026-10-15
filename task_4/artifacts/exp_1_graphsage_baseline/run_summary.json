@@ -1,0 +1,14 @@
+{
+  "run_name": "exp_1_graphsage_baseline",
+  "best_val_acc": 0.782,
+  "best_val_loss": 0.8117362856864929,
+  "test_acc": 0.81,
+  "test_loss": 0.6789748668670654,
+  "seed": 42,
+  "hidden_dim": 64,
+  "lr": 0.01,
+  "artifacts_dir": "/home/ehudab/Naod/iCog/Training/GNN/task_4/artifacts/exp_1_graphsage_baseline",
+  "weights_path": "/home/ehudab/Naod/iCog/Training/GNN/task_4/artifacts/exp_1_graphsage_baseline/weights.pt",
+  "config_path": "/home/ehudab/Naod/iCog/Training/GNN/task_4/artifacts/exp_1_graphsage_baseline/config.json",
+  "schema_path": "/home/ehudab/Naod/iCog/Training/GNN/task_4/artifacts/exp_1_graphsage_baseline/schema.json"
+}

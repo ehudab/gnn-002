@@ -1,0 +1,14 @@
+{
+  "run_name": "exp_2_graphsage_highcap",
+  "best_val_acc": 0.792,
+  "best_val_loss": 1.0039736032485962,
+  "test_acc": 0.791,
+  "test_loss": 0.9788208603858948,
+  "seed": 101,
+  "hidden_dim": 128,
+  "lr": 0.005,
+  "artifacts_dir": "/home/ehudab/Naod/iCog/Training/GNN/task_4/artifacts/exp_2_graphsage_highcap",
+  "weights_path": "/home/ehudab/Naod/iCog/Training/GNN/task_4/artifacts/exp_2_graphsage_highcap/weights.pt",
+  "config_path": "/home/ehudab/Naod/iCog/Training/GNN/task_4/artifacts/exp_2_graphsage_highcap/config.json",
+  "schema_path": "/home/ehudab/Naod/iCog/Training/GNN/task_4/artifacts/exp_2_graphsage_highcap/schema.json"
+}
