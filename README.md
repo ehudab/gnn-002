@@ -295,9 +295,9 @@ cd task_4
 docker compose up --build -d
 ```
 
-### 2. Available Endpoints
-- **FastAPI REST Service:** [http://localhost:8000](http://localhost:8000)
-- **Interactive Swagger Documentation:** [http://localhost:8000/docs](http://localhost:8000/docs)
+### 2. Available Endpoints & Frontend Dashboard
+- **Interactive MLOps Frontend Dashboard:** [http://localhost:8000](http://localhost:8000) (Pipeline visualizer, Training Studio with custom parameters & live progress, Model Registry with promote/rollback controls, and Live Article Predictions).
+- **FastAPI REST Service & OpenAPI Docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
 - **MLflow Tracking Server UI:** [http://localhost:5000](http://localhost:5000)
 
 ### 3. Test Inference Endpoint
